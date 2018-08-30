@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "pos.h"
 #include "stackADT.h"
 #include <stdio.h>
@@ -13,8 +14,12 @@ int mazesize;
 
 int main()
 {
-
+	read_maze("maze.txt");
+	printf("# original \n");
+	print_maze();
 }
+
+
 
 void read_maze(char *filename)
 {

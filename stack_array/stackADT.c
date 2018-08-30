@@ -1,5 +1,5 @@
 #include "stackADT.h"
-#define INIT_CAPACITY 100
+#define INIT_CAPACITY 10
 
 void err_msg(char *msg)
 {
@@ -11,7 +11,7 @@ Stack create()
 {
 	Stack s = (Stack)malloc(sizeof(struct stack_type));
 	if (s == NULL) err_msg("error in create");
-	s->contents = (Item*)malloc(sizeof(Item));
+	s->contents = (Item*)malloc(INIT_CAPACITY*sizeof(s->contents));
 	if (s->contents == NULL)
 	{
 		err_msg("error in create");
@@ -24,17 +24,18 @@ Stack create()
 
 void push(Stack s, Item i)
 {
-	if (s->top == s->capacity) reallocate(s);
+	if (is_full(s)) reallocate(s);
 	s->top++;
 	s->contents[s->top] = i;
 }
 
 void reallocate(Stack s)
 {
-	Item *tmp = (Item*)malloc(sizeof(2 * sizeof(s->capacity) + sizeof(Item)));
+	Item *tmp = (Item*)malloc(sizeof(2 * s->capacity * sizeof(Item)));
 	if (tmp == NULL)err_msg("error in reallocate");
-	for (int i = 0; i < s->capacity; i++)	//duplicate array
-		tmp[i] = s->contents[i];
+	tmp = s->contents;
+	//for (int i = 0; i < s->top; i++)	//duplicate array
+		//tmp[i] = s->contents[i];
 	free(s->contents);
 	s->contents = tmp;
 	s->capacity *= 2;

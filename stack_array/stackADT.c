@@ -39,3 +39,38 @@ void reallocate(Stack s)
 	s->contents = tmp;
 	s->capacity *= 2;
 }
+
+Item pop(Stack s)
+{
+	if(is_empty(s)) err_msg("error in push");
+	Item i = s->contents[s->top];
+	s->top--;	
+	return i;
+}
+
+Item peek(Stack s)
+{
+	if (is_empty(s)) err_msg("error in peek");
+	return s->contents[s->top];
+}
+
+bool is_empty(Stack s)
+{
+	return s->top == -1;
+}
+
+bool is_full(Stack s)
+{
+	return s->top == s->capacity;
+}
+
+void make_empty(Stack s)
+{
+	s->top = -1;
+}
+
+void destroy(Stack s)
+{
+	free(s->contents);
+	free(s);
+}

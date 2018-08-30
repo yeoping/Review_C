@@ -21,3 +21,21 @@ Stack create()
 	s->top = -1;	//initialize top
 	return s;
 }
+
+void push(Stack s, Item i)
+{
+	if (s->top == s->capacity) reallocate(s);
+	s->top++;
+	s->contents[s->top] = i;
+}
+
+void reallocate(Stack s)
+{
+	Item *tmp = (Item*)malloc(sizeof(2 * sizeof(s->capacity) + sizeof(Item)));
+	if (tmp == NULL)err_msg("error in reallocate");
+	for (int i = 0; i < s->capacity; i++)	//duplicate array
+		tmp[i] = s->contents[i];
+	free(s->contents);
+	s->contents = tmp;
+	s->capacity *= 2;
+}

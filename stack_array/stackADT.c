@@ -65,7 +65,7 @@ bool is_empty(Stack s)
 
 bool is_full(Stack s)
 {
-	return s->top == s->capacity;
+	return s->top +1 == s->capacity;	//s->top : 0 1 2 3 4 ,  s->top + 1과 비교해야함
 }
 
 void make_empty(Stack s)

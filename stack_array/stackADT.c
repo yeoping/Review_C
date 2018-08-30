@@ -1,5 +1,5 @@
 #include "stackADT.h"
-#define INIT_CAPACITY 10
+#define INIT_CAPACITY 20
 
 void err_msg(char *msg)
 {
@@ -31,13 +31,16 @@ void push(Stack s, Item i)
 
 void reallocate(Stack s)
 {
+	/*
 	Item *tmp = (Item*)malloc(sizeof(2 * s->capacity * sizeof(Item)));
+	printf("Test\n");
 	if (tmp == NULL)err_msg("error in reallocate");
-	tmp = s->contents;
-	//for (int i = 0; i < s->top; i++)	//duplicate array
-		//tmp[i] = s->contents[i];
+	for (int i = 0; i <= s->top; i++)	//duplicate array
+		tmp[i] = s->contents[i];
 	free(s->contents);
 	s->contents = tmp;
+	s->capacity *= 2;*/
+	s->contents = realloc(s->contents, 2 * s->capacity * sizeof(Item));
 	s->capacity *= 2;
 }
 

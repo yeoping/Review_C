@@ -1,6 +1,9 @@
 #ifndef STACKADT_H
 #define STACKADT_H
 
+#include <stdbool.h>
+#include <stdlib.h>
+
 typedef int Item;
 typedef struct stack_type* Stack;
 

@@ -2,7 +2,7 @@
 #define STACKADT_H
 
 typedef int Item;
-typedef stack_type* Stack;
+typedef struct stack_type* Stack;
 
 struct stack_type {
 	Item *contents;

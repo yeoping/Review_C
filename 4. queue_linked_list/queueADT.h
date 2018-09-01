@@ -1,5 +1,8 @@
 #ifndef QUEUEADT_H
 #define QUEUEADT_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 typedef int Item;
 typedef struct _node* Node;
@@ -17,6 +20,14 @@ struct queue_type {
 };
 
 //func
-
+int get_size(Queue q);
+Item dequeue(Queue q);
+Item peek(Queue q);
+void enqueue(Queue q, Item i);
+void destroy(Queue q);
+void make_empty(Queue q);
+bool is_empty(Queue q);
+Queue create();
+void err_msg(char *msg);
 // // // //
 #endif // !QUEUEADT_H

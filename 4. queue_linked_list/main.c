@@ -3,6 +3,7 @@
 
 int main()
 {
+	//test code
 	Queue q = create();
 	printf("# enqueue\n");
 	for (int i = 0; i < 3; i++)

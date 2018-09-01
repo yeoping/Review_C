@@ -385,5 +385,11 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
+# -yeop
+.vcxproj
+.sln
+.vcxproj.filters
+.vcxproj.user
+
 
 # End of https://www.gitignore.io/api/c,visualstudio

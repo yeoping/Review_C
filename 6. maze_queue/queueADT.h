@@ -4,14 +4,20 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef int Item;
+typedef struct pos Position;
+typedef Position Item;
 typedef struct _node* Node;
 typedef struct queue_type* Queue;
+
+struct pos {
+	int x, y;
+};
 
 struct _node {
 	Item data;
 	struct _node *next;
 };
+
 
 struct queue_type {
 	struct _node *front;	//data dequeue

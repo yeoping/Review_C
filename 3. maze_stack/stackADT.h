@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct pos Item;
-typedef Item Position;
+typedef struct pos Position;
+typedef Position Item;
 typedef struct _node* Node;
 typedef struct stack_type* Stack;
 

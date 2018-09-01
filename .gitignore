@@ -393,3 +393,5 @@ ASALocalRun/
 
 
 # End of https://www.gitignore.io/api/c,visualstudio
+*.vcxproj
+*.filters

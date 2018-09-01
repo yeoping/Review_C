@@ -1,7 +1,10 @@
-## Review_C
+# C language Review
 
-1. stack_array
+**1. stack_array**
+  
 
-2. stack_linked_list
+**2. stack_linked_list**
 
-3. maze_stack
+
+**3. maze_stack**
+

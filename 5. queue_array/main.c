@@ -6,7 +6,7 @@ int main()
 	//test code
 	Queue q = create();
 	printf("# enqueue\n");
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 300; i++)
 	{
 		printf("  %d\n", i);
 		enqueue(q, i);
